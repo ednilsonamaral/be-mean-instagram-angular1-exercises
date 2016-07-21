@@ -4,10 +4,17 @@
   <meta charset="UTF-8">
   <title>BeMEAN</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
-  <style>
+<style>
+    body select {
+      display: inline-block;
+    }
+    [disabled] {
+      background-color: #ccc !important;
+    }
     .wrapper {
       max-width: 600px;
       margin: 0 auto;
+      background-color: #fff;
     }
     .animate {
       transition: all linear 0.5s;
@@ -38,20 +45,42 @@
       opacity:0;
       height: 0;
     }
-
     .item.ng-move {
       opacity: 0;
     }
     .item.ng-move.ng-move-active  {
       opacity: 1;
     }
-
     .item.ng-enter.ng-enter-active {
-      font-weight: italic;
-      font-size: 1.2rem;
+      font-weight: normal;
       opacity:1;
     }
-	input[type=search] {
+    .strike {
+      text-decoration: line-through;
+    }
+    .success {
+      background-color: #A4E567;
+    }
+    .danger {
+      background-color: #E56759;
+    }
+    .valid {
+      background-color: #B4E5C4;
+    }
+    .ng-invalid {
+      background-color: red;
+    }
+    .has-error {
+      color: black;
+      font-weight: bold;
+      background-image: url('error.png');
+      background-repeat: repeat-y;
+    }
+    .selected {
+      font-weight: lighter;
+      text-decoration: line-through;
+    }
+    input[type=search] {
     width: 130px;
     box-sizing: border-box;
     border: 2px solid #ccc;
@@ -70,6 +99,18 @@
 	    width: 100%;
 	    text-align:center;
 	}
+	.tabela {
+    border-collapse: collapse;
+  }
+  .tabela tbody tr:nth-child(even) {
+      background-color: #CCC;
+  }
+  .tabela tbody tr:nth-child(odd) {
+      background-color: #FFF;
+  }
+  fieldset {
+    border: 0;
+  }
   </style>
 </head>
 <body data-ng-controller="UserController as User">
